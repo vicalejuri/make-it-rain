@@ -1,0 +1,6 @@
+dep/*
+!dep/Makefile
+example/dep/*
+!example/dep/Makefile
+
+*~
