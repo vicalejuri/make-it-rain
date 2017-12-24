@@ -87,21 +87,21 @@ $(OUTPUT_EXE): $(MAIN_APP) $(OBJECTS)
 # 
 build/%.c.o: %.c
 	@mkdir -p $(@D)
-	$(CC) $(FLAGS) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(FLAGS) $(CFLAGS) -c -o $@ $<
 	@printf "[$(OK)] Compiled ${CYAN}$<${NC}\n"
 
 build/%.m.o: %.m
 	@mkdir -p $(@D)
-	$(CC) $(FLAGS) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(FLAGS) $(CFLAGS) -c -o $@ $<
 	@printf "[$(OK)] Compiled ${CYAN}$<${NC}\n"
 
 build/%.cpp.o: %.cpp
 	@mkdir -p $(@D)
-	$(CXX) $(FLAGS) $(CXXFLAGS) -c -o $@ $<
+	@$(CXX) $(FLAGS) $(CXXFLAGS) -c -o $@ $<
 	@printf "[$(OK)] Compiled ${CYAN}$<${NC}\n"
 
 
 build/%.cc.o: %.cc compile
 	@mkdir -p $(@D)
-	$(CXX) $(FLAGS) $(CXXFLAGS) -c -o $@ $<
+	@$(CXX) $(FLAGS) $(CXXFLAGS) -c -o $@ $<
 	printf "[$(OK)] Compiled ${CYAN}$<${NC}\n"
