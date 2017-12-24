@@ -1,8 +1,7 @@
 Make it Rain
 ============
 
-The aim is to have a thin, extensible and pretty `Makefile` for simple C/C++ projects,
-that runs in every plataform (MAC, LINUX, WINDOWS)
+The aim is to have a thin, extensible and pretty `Makefile` for simple C/C++ projects.
 
 If you find Makefile too complex or cumbersome, try `makeitrain`, since many
 hard-edges were softened and it's still GNU Makefiles.
@@ -13,9 +12,9 @@ hard-edges were softened and it's still GNU Makefiles.
 
 *  Pretty and sane interface.
 *  Multi-compiler ( gcc, clang, vscode )
-*  Multi-platform ( LINUX, WINDOWS, MAC)
+*  Multi-plataform ( LINUX, WINDOWS, MAC)
 *  Compability with standard `CFLAGS` & `LDFLAGS`
-*  Support for `doctests` and C++11
+*  Buit-in support for `doctests` and C++11
 
 ## Installation
 
@@ -113,7 +112,6 @@ Yes, you, iphone user, owner of a house, citizen of a "1º world" country. 80k o
 
 If you found this useful, please donate some money, µbitcoins or just some github stars.
 
-If you could that , that would be GREEEEEEEEEAAAT.
 ```
 
-## Proudly assembled in Brazil 🏖
+## Assembled in Brazil 🏖
