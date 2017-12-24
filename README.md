@@ -1,8 +1,11 @@
 Make it Rain
 ============
 
-The aim is to have a thin, extensible and pretty `Makefile` for simple C/C++ projects. 
-If you find your Makefile complex for simple projects, try our Makefiles!
+The aim is to have a thin, extensible and pretty `Makefile` for simple C/C++ projects,
+that runs in every plataform (MAC, LINUX, WINDOWS)
+
+If you find Makefile too complex or cumbersome, try `makeitrain`, since many
+hard-edges were softened and it's still GNU Makefiles.
 
 ![Make it rain](doc/PrettyMake.png)
 
@@ -12,15 +15,13 @@ If you find your Makefile complex for simple projects, try our Makefiles!
 *  Multi-compiler ( gcc, clang, vscode )
 *  Multi-platform ( LINUX, WINDOWS, MAC)
 *  Compability with standard `CFLAGS` & `LDFLAGS`
-*  Support for `doctests`
+*  Support for `doctests` and C++11
 
 ## Installation
 
-The simplest way is to include.
-
-1. Copy the `Makefile` to your project root.
 1. Copy the folder `makerain` to your project.
-3. Create a `Makefile` and configure it:
+2. Create a `Makefile` in the project root.
+3. Configure it to your taste:
 
 ```Makefile
 SHELL:=/bin/bash
@@ -31,6 +32,9 @@ TARGET  :=  Release
 
 # Output
 OUTPUT_EXE 	  := build/${NAME}
+
+# Dependencies, assets and binary all bundled together for simple
+# deployment (eg: Mac .app , flatpack, zip folder...)
 OUTPUT_BUNDLE := dist/${NAME}
 
 # Copy Assets to bundle
@@ -59,8 +63,9 @@ include ./makerain/Makefile
 
 | Description      | command      	            | 
 |--------------	   | --------------	            |
-| make             | Compile all files         	| 
-| make info        | Display build information 	| 
+| make             | Compile all files         	|
+| make dll         | Compile external dependencies | 
+| make info        | Display build information 	|
 | make run         | Run generated executable   |
 | make debug       | Run with debugger attached |
 | make doctest     | Compile `doctest`          | 
@@ -92,22 +97,23 @@ Well, I know there can come fire from the sky
 To refine the purest of kings
 ```
 
-## Thanks to:
+## Many thanks to:
 
 * [Andrew belt](https://andrewbelt.name/) for his simple design on [VCVRack](https://github.com/VCVRack/Rack), his code was a inspiration for this tool.
 * [Milton Nascimento](https://www.youtube.com/watch?v=ji0BILoWwN8) for saving my life with his music.
 
-## LICENSE WTFYW
+## LICENSE 
 
-Permission is granted to do whatever you want, if you're poor.
+Simple and permissive MIT license.  
 
 ### But if you're rich or a company...
 
 ```
-Yes, you, iphone user, owner of a house, citizen of a "1º world" country. 80k or more per year...
+Yes, you, iphone user, owner of a house, citizen of a "1º world" country. 80k or more per year.
 
-If that's the case, you're forbidden to use, copy and redistribute any parts of the source code, without paying at least a beer to the author.
+If you found this useful, please donate some money, µbitcoins or just some github stars.
+
+If you could that , that would be GREEEEEEEEEAAAT.
 ```
-###### Robots are exempt of all taxes and dues.
 
 ## Proudly assembled in Brazil 🏖
