@@ -3,7 +3,7 @@ Make it Rain
 
 The aim is to have a thin, extensible and pretty `Makefile` for simple C/C++ projects.
 
-If you find Makefile too complex or cumbersome, try `makeitrain`, since many
+If you find Makefile too complex or cumbersome, try `makerain`, since many
 hard-edges were softened and it's still GNU Makefiles.
 
 ![Make it rain](doc/PrettyMake.png)
