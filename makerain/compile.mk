@@ -1,10 +1,11 @@
 #
 ## Helpers and compilers for .cc , .cpp, .hh, .h
 #  
-include makerain/prettyprint.mk
 
-################
-# GLOBAL FAGS #
+include ../makerain/prettyprint.mk
+
+#################
+# GLOBAL FLAGS #
 ###############
 #	   
 #	  
@@ -27,7 +28,7 @@ ifneq ($(ARCH), mac)
 CXXFLAGS += -Wsuggest-override
 endif
 
-# CPP Flags
+# C++ Flags
 CXXFLAGS += -lstdc++ -std=c++11
 
 
@@ -38,7 +39,7 @@ endif
 ifeq ($(ARCH), mac)
 	FLAGS += -DARCH_MAC
 	CXXFLAGS += -Wsuggest-override -stdlib=libc++
-	LDFLAGS += -stdlib=libc++
+	LDFLAGS  += -stdlib=libc++
 	MAC_SDK_FLAGS = -mmacosx-version-min=10.7
 	LDFLAGS += $(MAC_SDK_FLAGS)
 endif
@@ -50,18 +51,13 @@ endif
 
 
 # Source files that need to be compiled
-include makerain/normalize.mk
+include ../makerain/normalize.mk
 
-OBJECTS += $(patsubst %, build/%.o, $(SOURCES))
-DEPS = $(patsubst %, build/%.d, $(SOURCES))
-
-ifeq ( $$, ok )
-	OBJECTS=FODASE;
-endif
-
+OBJECTS += $(patsubst %, build/%.o, $(OBJ_SOURCES))
+DEPS 	 = $(patsubst %, build/%.d, $(OBJ_SOURCES))
 
 #
-# Tests
+# Compile doctest
 #
 doctest: $(TEST_APP) $(OBJECTS)
 	@$(CXX) $(FLAGS) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
@@ -76,9 +72,8 @@ doctest: $(TEST_APP) $(OBJECTS)
 #
 # Final app targets
 #
-$(PROGRAM): $(MAIN_APP) $(OBJECTS)
-	@echo -e ${F}
-	$(CXX) $(FLAGS) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+$(OUTPUT_EXE): $(MAIN_APP) $(OBJECTS)
+	@$(CXX) $(FLAGS) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 	@$(eval FILES_NUM = $(shell echo -n $^ | wc -w))	
 	@printf "[${OK}] Linked ${CYAN}${FILES_NUM} files${NC} => ${GREEN}$@${NC}\n"
@@ -110,4 +105,3 @@ build/%.cc.o: %.cc compile
 	@mkdir -p $(@D)
 	$(CXX) $(FLAGS) $(CXXFLAGS) -c -o $@ $<
 	printf "[$(OK)] Compiled ${CYAN}$<${NC}\n"
-	

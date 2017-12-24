@@ -1,6 +1,8 @@
 dep/*
 !dep/Makefile
 example/dep/*
+example/build
 !example/dep/Makefile
-
+.vscode
+build
 *~

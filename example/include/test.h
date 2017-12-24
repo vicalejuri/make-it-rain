@@ -1,6 +1,4 @@
 /*
  * Testing includes
  */
-int test(void) { 
-    return 1;
-}
+int test(void);
