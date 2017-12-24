@@ -11,10 +11,10 @@ hard-edges were softened and it's still GNU Makefiles.
 ## Features
 
 *  Pretty and sane interface.
-*  Multi-compiler ( gcc, clang, vscode )
-*  Multi-plataform ( LINUX, WINDOWS, MAC)
-*  Compability with standard `CFLAGS` & `LDFLAGS`
-*  Buit-in support for `doctests` and C++11
+*  Compatible with many compilers ( gcc, clang, vscode )
+*  Cross-platform ( LINUX, WINDOWS, MAC)
+*  Compatible with standard `CFLAGS` & `LDFLAGS`
+*  Built-in support for `doctests`
 
 ## Installation
 
