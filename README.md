@@ -39,8 +39,8 @@ OUTPUT_BUNDLE := dist/${NAME}
 # Copy Assets to bundle
 ASSET_FOLDER 	:= $(NAME).res
 
-# External dependencies, like curl, openssl
-# Should have both: shared code, and header files
+# External dependencies, like curl or openssl
+# May have both shared lib (.so) and header files
 DLL_FOLDER := dep
 
 # Include folders
